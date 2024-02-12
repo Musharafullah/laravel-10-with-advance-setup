@@ -9,14 +9,25 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ ucfirst(auth()->user()->roles[0]->name) }} {{ $pageTitle != null ? '- ' . $pageTitle : '' }}</title>
+    <!-- PICK ONE OF THE STYLES BELOW -->
+    <link href="{{ asset('main/css/modern.css') }}" rel="stylesheet">
+    <link href="{{ asset('main/css/classic.css') }}" rel="stylesheet">
+    <link href="{{ asset('main/css/dark.css') }}" rel="stylesheet">
+    <link href="{{ asset('main/css/light.css') }}" rel="stylesheet">
 
+
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Lightbox library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <!-- Scripts -->
-    @vite(['resources/assets/sass/app.scss', 'resources/assets/js/app.js'])
+    <script src="{{ asset('main/js/settings.js') }}"></script>
+    <script src="{{ asset('build/assets/app-15048491.js') }}"></script>
 
-    {{-- dynamic styles here for saperate page. --}}
-    @isset($styles)
-        {{ $styles }}
-    @endisset
+
 </head>
 
 <body class="antialiased">

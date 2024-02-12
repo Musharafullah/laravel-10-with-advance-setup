@@ -6,8 +6,8 @@
     </a>
     <div class="sidebar-content">
         <div class="sidebar-user">
-            <img src="{{ auth()->user()->imageUrl() == ''? Vite::asset('resources/assets/new-dashboard/img/avatars/undraw_profile.svg'): asset(auth()->user()->imageUrl()) }}"
-                class="img-fluid rounded-circle mb-2" alt="{{ auth()->user()->name }} profile" />
+            <img src="{{ asset('main/img/avatars/avatar-2.jpg') }}" class="img-fluid rounded-circle mb-2"
+                alt="{{ auth()->user()->name }} profile" />
             <div class="fw-bold">{{ auth()->user()->name }}</div>
             <small>Welcome to {{ ucfirst(auth()->user()->roles[0]->name) }} panel</small>
         </div>
@@ -17,7 +17,7 @@
                 Main
             </li>
 
-            <li class="sidebar-item  {{ request()->route()->getName() == 'auth'? 'active': '' }}">
+            <li class="sidebar-item  {{ request()->route()->getName() == 'auth' ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('auth') }}">
                     <i class="align-middle me-2 fas fa-fw fa-home"></i> <span class="align-middle">Dashboard</span>
                 </a>
